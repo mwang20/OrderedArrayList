@@ -33,12 +33,13 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public T set(int index, T value){
-    if (value == null){
-      throw new IllegalArgumentException();
+    int correct = ordered(value);
+    if (correct == super.size()){
+      correct = super.size() - 1;
     }
-    T removed = super.get(ordered(value));
-    super.remove(ordered(value));
-    super.add(ordered(value), value);
+    T removed = super.get(index);
+    super.remove(index);
+    add(correct, value);
     return removed;
   }
 }
