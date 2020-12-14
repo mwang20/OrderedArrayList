@@ -29,7 +29,9 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     if (value == null){
       throw new IllegalArgumentException();
     }
-    super.set(index, value);
-    return super.set(index, value);
+    T removed = super.get(index);
+    super.remove(index);
+    super.add(index, value);
+    return removed;
   }
 }
