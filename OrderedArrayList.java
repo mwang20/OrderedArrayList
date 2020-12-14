@@ -7,6 +7,10 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     super();
   }
 
+  public OrderedArrayList(int startingCapacity){
+    super(startingCapacity);
+  }
+
   private int ordered(T value){
     if (value == null){
       throw new IllegalArgumentException();
