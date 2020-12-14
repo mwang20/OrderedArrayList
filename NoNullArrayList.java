@@ -2,6 +2,10 @@ import java.lang.IllegalArgumentException;
 import java.util.ArrayList;
 
 public class NoNullArrayList<T> extends ArrayList<T>{
+  
+  public NoNullArrayList(){
+    super();
+  }
 
   public boolean add(T value){
     if (value == null){
