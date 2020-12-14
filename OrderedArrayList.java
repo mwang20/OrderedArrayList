@@ -15,4 +15,8 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     return super.size();
   }
 
+  public boolean add(T value){
+    super.add(ordered(value), value);
+    return true;
+  }
 }
